@@ -1,0 +1,56 @@
+* {
+    margin:0;
+}
+
+html, body{
+    height:100%;
+}
+
+h1,h2,h3,h4,h5, p{
+    color:#fff;
+    font-family: 'Roboto';
+}
+
+h1 {
+    font-size: 60px;
+}
+
+p {
+    font-size: 25px;
+}
+
+.container{
+    display:grid;
+    width: 100%;
+    height: inherit;
+    grid-template-columns:40% 60%;
+    grid-template-rows:  93% 7%;
+    grid-template-areas: 
+        "content   board"
+        "footer     footer";
+}
+
+.container .content-component{
+    grid-area: content;
+    background: #692E25;
+    padding: 50px 40px 0px;
+    text-align: center;
+    display: inherit;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 2.5fr 1fr;
+    grid-template-areas:
+        "header"
+        "difficulty-cards"
+        "score";
+}
+
+.container .board-component {
+    grid-area: board;
+    background: #93665F;
+    height: 100%;
+}
+
+.container .footer-component {
+    grid-area: footer;
+    background: #401C17;
+}
