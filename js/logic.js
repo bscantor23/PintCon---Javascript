@@ -54,10 +54,8 @@ class ControladorLogica { //Clase ControladorLogica
                     }while(this.idExist == true); //Valida si un id generado ya existe en el vector idImagenes
                     
                     this.imagenes[i] = this.numeroAleatorio; //Guarda el id en el vector idImagenes
-                    console.log("id imagen "+i+": "+this.imagenes[i]);
                 }
                 
-                console.log("\n");
 
                 while(this.contadorCartas <= 12) { //Ciclo que reconoce que se haya generado los espacios del vector cartas
                     
@@ -68,8 +66,6 @@ class ControladorLogica { //Clase ControladorLogica
                         this.numeroAleatorio = this.getRandomInt(0,12);
                         
                         if(this.cartas[this.numeroAleatorio] == null){ //Si encuentra que la posición no tiene datos
-                            console.log("posicion: "+this.numeroAleatorio+" para id:"+this.imagenes[this.contadorImagen]);
-                            
                             //Se guarda en la posición aleatoria el id de la posición del momento del vector idImagenes
                             this.cartas[this.numeroAleatorio] = this.imagenes[this.contadorImagen]; 
                             
@@ -81,7 +77,6 @@ class ControladorLogica { //Clase ControladorLogica
                     
                     //Si el contadorCartas es par implica que se han generado una pareja de cartas
                     if(this.contadorCartas % 2 == 0){
-                        console.log("Contador: "+ this.contadorCartas+"\n");
                         this.contadorImagen++; //Se empieza a generar una nueva pareja de cartas 
                     }
                     this.contadorCartas++; //Se autoincrementa el contador

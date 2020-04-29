@@ -4,37 +4,56 @@ class Carta {
 
         this.idCard = idCard;
         this.idImgCard = idImgCard;
-        this.isRotate = false;
 
-        
-        let card = document.querySelector("#card-"+idCard);
+        this.query = document.querySelector("#card-"+idCard); 
+        this.img = this.query.querySelector("img");
+    }
 
-        let further = card.querySelector(".further-space");
-    
-        further.style.backgroundImage=`url('./img/cards/img_${idImgCard}.jpg')`;
+    getQuery(){
+        return this.query;
+    }
+
+    getIdImgCard(){
+        return this.idImgCard;
+    }
+
+    addEvents(){
+
+        const further = this.query.querySelector(".further-space");
+        further.style.backgroundImage=`url('./img/cards/img_${this.idImgCard}.jpg')`;
+
+        const img = this.query.querySelector("img");
+        const card = this.query;
         
-        let img = card.querySelector("img");
-        
-        card.addEventListener("click", function(){
-            if(!this.isRotate){
+
+        this.query.addEventListener("click", function(){
+            if(!card.classList.contains("rotate")){
                 card.classList.toggle("rotate");
-                this.isRotate = true;
-                couples();
+                
             }
         });
     
-        card.addEventListener("mouseover", function(){
+        this.query.addEventListener("mouseover", function(){
             img.src="img/icon-selected.jpg";
         });
     
-        card.addEventListener("mouseout", function(){
+        this.query.addEventListener("mouseout", function(){
             img.src="img/icon-default.jpg";
+        });
+
+        further.addEventListener("mouseout", function(){
+            couples();
         });
     }
 
     eventRotate(){
-        let card = document.querySelector("#card-"+idCard);
+        let card = this.query;
         card.classList.toggle("rotate");
+    }
+
+    eventFind(){
+        let card = this.query;
+        card.classList.toggle("find");
     }
 
 

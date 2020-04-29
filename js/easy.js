@@ -3,37 +3,48 @@ const LogicInstance = new ControladorLogica();
 const imgCards = LogicInstance.getCartas(1);
 
 let cardObjects = new Array(12);
-
-let coupleCards = new Array(2);
-let countCards = 0;
-
-//console.log(imgCards);
+let qualityCouple = 0;
 
 for(let i=0;i<12;i++){
     cardObjects[i] = new Carta(i,imgCards[i]);
+    cardObjects[i].addEvents();
 }
-console.log(cardObjects[0].isRotate);
 
 function couples(){
-    for(let i=0;i<12;i++){
-        console.log("prueba1");
-        console.log(cardObjects);
-        if(cardObjects[i].isRotate == true){
-            console.log("prueba2");
-            idCards.push(cardObjects[i]);
-            countCards=+1;
+
+        let coupleCards = new Array();
+        let countCards = 0;
+
+        for(let i=0;i<12;i++){
+            if(cardObjects[i].getQuery().classList.contains("rotate") && cardObjects[i].getQuery().classList.contains("find") == false){
+
+                coupleCards.push(cardObjects[i]);
+                countCards++;
+            }
         }
-    }
-    if(countCards == 2){
-        console.log("prueba");
-        if(coupleCards[0].idCard != coupleCards[1].idCard){
-            coupleCards[0].eventRotate();
-            coupleCards[1].eventRotate();
-        }else{
-            console.log("pareja encontrada");
+    
+        if(countCards == 2){
+            if(coupleCards[0].getIdImgCard() != coupleCards[1].getIdImgCard()){
+                coupleCards[0].eventRotate();
+                coupleCards[1].eventRotate();
+            }else{
+                coupleCards[0].eventFind();
+                coupleCards[1].eventFind();
+                qualityCouple++;
+                console.log(qualityCouple);
+                if(qualityCouple == 6){
+                    qualityCouple = 0;
+                    for(let i=0;i<12;i++){
+                        setTimeout(() => {
+                            cardObjects[i].eventFind();
+                            cardObjects[i].eventRotate();
+                           
+                        }, 500);
+                    }
+                }
+            }   
         }
-        idCards = null;
-    }
+        countCards = 0;
 }
 
 

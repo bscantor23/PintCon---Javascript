@@ -1,10 +1,10 @@
 class Carta {
 
-    constructor(idCard, idImgCard){
+    constructor(idCard, idImgCard, rotate){
 
         this.idCard = idCard;
         this.idImgCard = idImgCard;
-        this.isRotate = false;
+        this.isRotate = rotate;
 
         this.query = document.querySelector("#card-"+idCard);
         this.further = this.query.querySelector(".further-space");
