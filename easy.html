@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cards.css">
     <title>Pintcon  Easy Level</title>
 </head>
 <body>
@@ -14,9 +15,9 @@
                 <div class="tittle-section">
                     <h1>PintCon Game</h1>
                 </div>
-                <span class="decorate-section">
-                    <img src="" alt="">
-                </span>
+                <div class="decorate-section">
+                    <img src="img/decorate-span.jpg" alt="">
+                </div>
             </header>
             <section class="difficulty-component">
                 <div class="welcome-section">
@@ -24,69 +25,132 @@
                 </div>
                 <div class="difficulty-cards-section">
                     <div class="easy-card">
-                        <img src="" alt="">
-                        <h3>Easy</h3>
+                        <a href="easy.html">
+                            <div class="difficulty-card">
+                                <img class="icon-difficulty" src="img/icon-selected.jpg" alt="">
+                            </div>
+                            <h3>Easy</h3>
+                        </a>
                     </div>
                     <div class="normal-card">
-                        <img src="" alt="">
-                        <h3>Normal</h3>
+                        <a href="normal.html">
+                            <div class="difficulty-card">
+                                <img class="icon-difficulty" src="img/icon-default.jpg" alt="">
+                            </div>
+                            <h3>Normal</h3>
+                        </a>
                     </div>
                     <div class="hard-card">
-                        <img src="" alt="">
-                        <h3>Hard</h3>
+                        <a href="hard.html">
+                            <div class="difficulty-card">
+                                <img class="icon-difficulty" src="img/icon-default.jpg" alt="">
+                            </div>
+                            <h3>Hard</h3>
+                        </a>
                     </div>
                 </div>
                 <span class="decorate-section">
-                    <img src="" alt="">
+                    <img src="img/decorate-span.jpg" alt="">
                 </span>
-            </section>
-            <section class="score-section">
-                <h2>Score: 0 Points</h2>
+                <section class="score-section">
+                    <h2>Score: 0 Points</h2>
+                </section>
             </section>
         </section>
         <section class="board-component">
             <section class="board-section">
-                <div class="card-board">
-
+                <div id="card-0" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-
+                <div id="card-1" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-
+                <div id="card-2" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-
+                <div id="card-3" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-
+                <div id="card-4" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-
+                <div id="card-5" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-                    
+                <div id="card-6" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-
+                <div id="card-7" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-
+                <div id="card-8" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-
+                <div id="card-9" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-
+                <div id="card-10" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
-                <div class="card-board">
-
+                <div id="card-11" class="card-board">
+                    <div class="front-space">
+                        <img src="img/icon-default.jpg" class="icon-card" alt="">
+                    </div>
+                    <div class="further-space">
+                    </div>
                 </div>
             </section>
         </section>
         <footer class="footer-component">
-            prueba footer
+
         </footer>
+        <script src="js/card.js"></script>
+        <script src="js/logic.js"></script>
+        <script src="js/easy.js"></script>
     </div>
 </body>
 </html>
