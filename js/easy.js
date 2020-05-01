@@ -1,8 +1,8 @@
 
 const LogicInstance = new ControladorLogica();
-const imgCards = LogicInstance.getCartas(1);
-
 let score = document.querySelector("#score");
+
+const imgCards = LogicInstance.getCartas(1);
 let numberScore = 0;
 
 let cardObjects = new Array(12);
@@ -13,11 +13,17 @@ for(let i=0;i<12;i++){
     cardObjects[i].addEvents();
 }
 
-function eventScore(){
+function eventScore(cont){
     score.textContent="Score: "+ numberScore+" points" ;
     score.classList.toggle("score-transition-1");
     setTimeout(() => {
         score.classList.toggle("score-transition-2");
+    }, 600);
+
+    setTimeout(() => {
+        if(!cont){
+            this.eventScore(true);
+        }
     }, 600);
 }
 
@@ -34,9 +40,12 @@ function couples(){
         }
     
         if(countCards == 2){
+            countCards = 0;
             if(coupleCards[0].getIdImgCard() != coupleCards[1].getIdImgCard()){
-                coupleCards[0].eventRotate();
-                coupleCards[1].eventRotate();
+                setTimeout(() => {
+                    coupleCards[0].eventRotate();
+                    coupleCards[1].eventRotate();
+                }, 800);
             }else{
                 coupleCards[0].eventFind();
                 coupleCards[1].eventFind();
@@ -44,22 +53,22 @@ function couples(){
                 numberScore=numberScore+50;
 
 
-                    eventScore();
+                eventScore();
 
 
                 if(qualityCouple == 6){
                     qualityCouple = 0;
                     for(let i=0;i<12;i++){
                         setTimeout(() => {
+                            numberScore = 0;
+                            eventScore();
                             cardObjects[i].eventFind();
                             cardObjects[i].eventRotate();
-                           
-                        }, 500);
+                        }, 3000);
                     }
                 }
             }   
         }
-        countCards = 0;
 }
 
 

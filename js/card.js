@@ -27,9 +27,11 @@ class Carta {
         
 
         this.query.addEventListener("click", function(){
-            if(!card.classList.contains("rotate")){
+            if(!card.classList.contains("rotate")){ 
                 card.classList.toggle("rotate");
-                
+                setTimeout(() => {
+                    couples();
+                }, 100);
             }
         });
     
@@ -41,9 +43,6 @@ class Carta {
             img.src="img/icon-default.jpg";
         });
 
-        further.addEventListener("mouseout", function(){
-            couples();
-        });
     }
 
     eventRotate(){
