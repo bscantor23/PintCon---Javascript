@@ -1,5 +1,6 @@
 
 const LogicInstance = new ControladorLogica();
+
 let score = document.querySelector("#score");
 
 const imgCards = LogicInstance.getCartas(1);

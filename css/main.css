@@ -9,7 +9,11 @@ html, body{
 h1,h2,h3,h4,h5, p{
     color:#fff;
     font-family: 'Roboto';
-    padding:10px 0px;
+    padding:0px;
+}
+
+a {
+    text-decoration: none;
 }
 
 h1 {
@@ -22,71 +26,103 @@ p {
 
 .container{
     display:grid;
+
     width: inherit;
     height: inherit;
+
     grid-template-columns:40% 60%;
     grid-template-rows:  97% 3%;
     grid-template-areas: 
         "content   board"
         "footer    footer";
+
 }
 
 .container .content-component{
-    grid-area: content;
-    background: #692E25;
-    padding: 50px 10px 0px;
-    text-align: center;
     display: inherit;
+
+
+    padding:50px 0px;
+
+    background: #692E25;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+
+    grid-area: content;
     grid-template-columns: 100%;
-    grid-template-rows: 1.5fr 2.5fr 1fr;
+    grid-template-rows:0.4fr 1fr 0.7fr;
     grid-template-areas:
         "header"
         "difficulty"
+        "score";
 }
 
 .content-component .header-component {
+    display:inherit;
+
     grid-area: header;
-    display:grid;
+    grid-template-rows:1fr 50px;
     grid-template-areas: 
         "tittle"
-        "decorate";
+        "decorate-header";
 }
 
 .header-component .tittle-section {
     grid-area: tittle;
 }
 
-.header-component .decorate-section, .difficulty-cards-section .decorate-section {
-    grid-area: decorate;
+.header-component .decorate-section {
+    grid-area: decorate-header;
 }
 
 .content-component .difficulty-component {
-    padding:10px 0px 0px;
-    grid-area: difficulty;
     display:inherit;
-    grid-template-columns: 100%;
-    grid-template-rows:200px, 200px,200px;
+
     height:inherit;
+    width:inherit;
+
+    grid-area: difficulty;
+    grid-template-columns: 100%;
+    grid-template-rows:1fr 200px 50px;
     grid-template-areas: 
         "welcome"
         "cards"
-        "decorate"
-        "score";
+        "decorate-difficulty";
 }
 
 .difficulty-component .welcome-section{
     grid-area: welcome;
-    padding: 20px 0px;
+    padding: 30px 20px;
 }
 
 .difficulty-component .difficulty-cards-section{
     grid-area: cards;
+    padding: 0px 20px;
+    height:inherit;
+    width:inherit;
     display:inherit;
-    grid-template-columns: repeat(3,140px);
+    grid-template-columns: repeat(3,1fr);
     justify-content: center;
+    align-content: center;
     grid-template-areas: "easy normal hard";
     grid-gap:30px;
-    padding-bottom: 20px;
+}
+
+.easy-card {
+    grid-area: easy;
+}
+
+.normal-card {
+    grid-area: normal;
+}
+
+.hard-card {
+    grid-area: hard;
+}
+
+.difficulty-component .decorate-section {
+    grid-area: decorate-difficulty;
 }
 
 .difficulty-card {
@@ -95,6 +131,7 @@ p {
     height: 115px;
     width: 130px;
     padding: 10px;
+    margin-bottom: 10px;
     box-shadow: 8px 5px 8px 2px rgba(0,0,0,0.5);
 }
 
@@ -105,7 +142,7 @@ p {
     height: 115px;
 }
 
-.difficulty-component .score-section {
+.content-component .score-component {
     grid-area: score;
 }
 
@@ -124,22 +161,50 @@ p {
     height:inherit;
     border: 10px solid #401C17;
     display: grid;
-    padding-top:10px;
+    padding:30px;
     gap:10px 30px;
     justify-content: center;
     align-content: center;
-    grid-template-columns: repeat(4,140px);
+    grid-template-columns: repeat(4,minmax(120px,140px));
     grid-template-rows: repeat(3,160px);
     grid-template-areas:
-        "card-1     card-2      card-3      card-4"
-        "card-5     card-6      card-7      card-8"
-        "card-9     card-10     card-11     card-12"
-        "card-13    card-14     card-15     card-16";
-
+        "card-0     card-1      card-2      card-3"
+        "card-4     card-5      card-6      card-7"
+        "card-8     card-9     card-10     card-11";
 }
 
 .container .footer-component {
     grid-area: footer;
     background: #401C17;
+}
+
+@media only screen and (max-width:1024px){
+    .board-component .board-section {
+        grid-template-areas: 
+            "card-0 card-1 card-2"
+            "card-3 card-4 card-5"
+            "card-6 card-7 card-8"
+            "card-9 card-10 card-11";
+    }
+}
+
+@media only screen and (max-width:768px){
+    .board-component .board-section {
+        grid-template-areas: 
+            "card-0 card-1 card-2"
+            "card-3 card-4 card-5"
+            "card-6 card-7 card-8"
+            "card-9 card-10 card-11";
+    }
+}
+
+@media only screen and (max-width:480px){
+    .board-component .board-section {
+        grid-template-areas: 
+            "card-0 card-1 card-2"
+            "card-3 card-4 card-5"
+            "card-6 card-7 card-8"
+            "card-9 card-10 card-11";
+    }
 }
 

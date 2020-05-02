@@ -32,7 +32,7 @@
 
 .icon-card{
     margin: auto auto;
-    width: 125px;
+    width: inherit;
     height: 115px;
 }
 
